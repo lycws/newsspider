@@ -6,6 +6,7 @@ redis数据库结构
 	”title“ ：存储标题
 	”content“	 ：存储正文
 	”time“：存储时间
+	“source”: 来源
 
 财经类
 “finance” （list） ：里面存储着所有财经类资讯的id，倒序排列
@@ -14,6 +15,7 @@ redis数据库结构
 	”title“ ：存储标题
 	”content“	 ：存储正文
 	”time“：存储时间
+“source”: 来源
 
 体育类
 “sports” （list） ：里面存储着所有体育类资讯的id，倒序排列
@@ -22,6 +24,7 @@ redis数据库结构
 	”title“ ：存储标题
 	”content“	 ：存储正文
 	”time“：存储时间
+	“source”: 来源
 
 娱乐类
 “ent” （list） ：里面存储着所有娱乐类资讯的id，倒序排列
@@ -30,4 +33,5 @@ redis数据库结构
 	”title“ ：存储标题
 	”content“	 ：存储正文
 	”time“：存储时间
+“source”: 来源
 

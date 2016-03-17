@@ -16,12 +16,16 @@ class HtmlOutputer(object):
 
         if type == 0:
             name = "news"
+            source = "腾讯新闻"
         elif type == 1:
             name = "finance"
+            source = "腾讯财经"
         elif type == 2:
             name = "sports"
+            source = "腾讯体育"
         elif type == 3:
             name = "ent"
+            source = "腾讯娱乐"
         else:
             name = ""
 
@@ -44,6 +48,7 @@ class HtmlOutputer(object):
                     r.hset(name + ':' + str(id), 'title', data['title'])
                     r.hset(name + ':' + str(id), 'content', data['content'])
                     r.hset(name + ':' + str(id), 'time', data['time'])
+                    r.hset(name + ':' + str(id), 'source', source)
 
                 pipe.execute()
                 break
