@@ -1,6 +1,7 @@
 #coding:utf-8
 
 import redis
+import time
 
 class HtmlOutputer(object):
 
@@ -34,15 +35,19 @@ class HtmlOutputer(object):
             try:
                 pipe.watch(name)
 
-                id = r.lrange(name, 0, 0)
+                id = r.get(name+"_num")
+                a = data['time']+":00"
+                t = time.strptime(a, "%Y-%m-%d %H:%M:%S")
+                s = int(time.mktime(t))
 
-                if id == []:
+                if id is None:
                     id = 1
                 else:
-                    id = int(id[0].decode('utf-8')) + 1
+                    id = int(id.decode('utf-8')) + 1
 
                 if not r.sismember(name+"set", data['title']):
-                    r.lpush(name, id)
+                    r.zadd(name+"zset", id, s)
+                    r.set(name+"_num", id)
                     r.sadd(name + "set", data['title'])
                     r.hset(name + ':' + str(id), 'id', id)
                     r.hset(name + ':' + str(id), 'title', data['title'])

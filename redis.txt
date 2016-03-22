@@ -1,6 +1,7 @@
 redis数据库结构
 新闻类
-“news” （list） ：里面存储着所有新闻类资讯的id，倒序排列
+“newszset” （zset） ：里面存储着所有新闻类资讯的id，根据时间排序，可用zrevrange获取最新的新闻
+“news_num”(string)：里面存储着资讯的数量
 ”newsset“ （set）：里面存储着所有新闻类资讯的标题，用于查重
 ”news : id“ （hash）：id为资讯的编号
 	”title“ ：存储标题
@@ -9,8 +10,8 @@ redis数据库结构
 	“source”: 来源
 
 财经类
-“finance” （list） ：里面存储着所有财经类资讯的id，倒序排列
-” financeset“ （set）：里面存储着所有财经类资讯的标题，用于查重
+“financezset” （zset） ：里面存储着所有财经类资讯的id，根据时间排序，可用zrevrange获取最新的新闻
+“finance_num”(string)：里面存储着资讯的数量
 ” finance: id“ （hash）：id为资讯的编号
 	”title“ ：存储标题
 	”content“	 ：存储正文
@@ -18,8 +19,8 @@ redis数据库结构
 “source”: 来源
 
 体育类
-“sports” （list） ：里面存储着所有体育类资讯的id，倒序排列
-” sportsset“ （set）：里面存储着所有体育类资讯的标题，用于查重
+“sportszset” （zset） ：里面存储着所有体育类资讯的id，根据时间排序，可用zrevrange获取最新的新闻
+“sports_num”(string)：里面存储着资讯的数量
 ” sports: id“ （hash）：id为资讯的编号
 	”title“ ：存储标题
 	”content“	 ：存储正文
@@ -27,8 +28,8 @@ redis数据库结构
 	“source”: 来源
 
 娱乐类
-“ent” （list） ：里面存储着所有娱乐类资讯的id，倒序排列
-” ent set“ （set）：里面存储着所有娱乐类资讯的标题，用于查重
+“entzset” （zset） ：里面存储着所有娱乐类资讯的id，根据时间排序，可用zrevrange获取最新的新闻
+“ent_num”(string)：里面存储着资讯的数量
 ” ent: id“ （hash）：id为资讯的编号
 	”title“ ：存储标题
 	”content“	 ：存储正文

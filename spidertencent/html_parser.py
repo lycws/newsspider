@@ -50,7 +50,7 @@ class HtmlParser(object):
             res_data['url'] = page_url
             title = soup.find('div', class_='hd')
             title = title.contents[1].get_text()
-            print(title)
+            #print(title)
             res_data['title'] = title
 
             time = soup.find('span', class_='article-time').get_text()
