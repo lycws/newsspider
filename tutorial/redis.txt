@@ -1,0 +1,46 @@
+redis数据库结构
+新闻类
+“newszset” （zset） ：里面存储着所有新闻类资讯的id，根据时间排序，可用zrevrange获取最新的新闻
+“news_num”(string)：里面存储着资讯的数量
+”newsset“ （set）：里面存储着所有新闻类资讯的标题，用于查重
+”news : id“ （hash）：id为资讯的编号
+	”title“ ：存储标题
+	”content“	 ：存储正文
+	”time“：存储时间
+	“showimg”: 列表显示图片
+	“source”: 来源
+	“click”：点击数，初始为0
+
+财经类
+“financezset” （zset） ：里面存储着所有财经类资讯的id，根据时间排序，可用zrevrange获取最新的新闻
+“finance_num”(string)：里面存储着资讯的数量
+” finance: id“ （hash）：id为资讯的编号
+	”title“ ：存储标题
+	”content“	 ：存储正文
+	”time“：存储时间
+“showimg”: 列表显示图片
+	“source”: 来源
+	“click”：点击数，初始为0
+
+体育类
+“sportszset” （zset） ：里面存储着所有体育类资讯的id，根据时间排序，可用zrevrange获取最新的新闻
+“sports_num”(string)：里面存储着资讯的数量
+” sports: id“ （hash）：id为资讯的编号
+	”title“ ：存储标题
+	”content“	 ：存储正文
+	”time“：存储时间
+	“showimg”: 列表显示图片
+	“source”: 来源
+	“click”：点击数，初始为0
+
+娱乐类
+“entzset” （zset） ：里面存储着所有娱乐类资讯的id，根据时间排序，可用zrevrange获取最新的新闻
+“ent_num”(string)：里面存储着资讯的数量
+” ent: id“ （hash）：id为资讯的编号
+	”title“ ：存储标题
+	”content“	 ：存储正文
+	”time“：存储时间
+“showimg”: 列表显示图片
+	“source”: 来源
+	“click”：点击数，初始为0
+
